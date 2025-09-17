@@ -2741,9 +2741,9 @@
                 }
                 , [p.o.没有更多使用时间]),
                 l.effect(t => {
-                    console.log("8018 添加游戏时间");
-                    let {remainingTime: e} = t.data;
-                    o(a.Bp, e)
+                    console.log("8018 添加游戏时间 This means that my bypass has worked!");
+                    //let {remainingTime: e} = t.data;
+                    //o(a.Bp, e)
                 }
                 , [p.o.添加游戏时间]),
                 l.effect( () => {}
