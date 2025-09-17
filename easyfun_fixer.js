@@ -1,3 +1,8 @@
+const button = document.querySelector(
+    '.button.size-9.bg-white-1.bg-op-10.c-white-1.hover\\:c-cyan-5'
+);
+const fullscreenElement = document.getElementById('fullscreen-element');
+
 function getNewID() {
     let hex = "";
     for (let i = 0; i < 32; i++) {
@@ -21,3 +26,14 @@ newFingerprint();
 getLocalStorageData();
 
 window.addEventListener("contextmenu", (e) => e.preventDefault());
+if (button && fullscreenElement) {
+    button.addEventListener('click', () => {
+          if (fullscreenElement.requestFullscreen) {
+            fullscreenElement.requestFullscreen();
+          } else if (fullscreenElement.webkitRequestFullscreen) { // Safari
+            fullscreenElement.webkitRequestFullscreen();
+          } else if (fullscreenElement.msRequestFullscreen) { // IE/Edge
+            fullscreenElement.msRequestFullscreen();
+          }
+    });
+}
