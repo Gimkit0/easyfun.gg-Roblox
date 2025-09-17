@@ -14,6 +14,7 @@ function getNewID() {
 function newFingerprint() {
     localStorage.setItem('EASYFUN_FINGER_PRINT', getNewID());
     localStorage.setItem('EASYFUN_LOGIN_SOURCE', 3);
+    localStorage.setItem('MwU92MD4slarNjdgil3boe', {"3":1758091983240});
 }
 
 function getLocalStorageData() {
