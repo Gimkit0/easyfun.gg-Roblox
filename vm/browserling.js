@@ -27,6 +27,7 @@ var Xt = (e, t) => {
     return n
 }
 ;
+console.log(JSON.parse(document.getElementById("session-init").text))
 var it = (e, t, n) => Pt(e, typeof t != "symbol" ? t + "" : t, n);
 const GIT_HASH_JS = "fd49cc"
   , [GIT_HASH_BROWSE,SESSION_FLAGS,SESSION_USER_ID,SESSION_PLAN,SESSION_EMAIL,SESSION_PAYLOAD,SESSION_REQUEST,BROWSE_REQUEST_ERROR] = JSON.parse(document.getElementById("session-init").text)
@@ -6756,7 +6757,7 @@ function KBTextareaInput(e) {
     n.style.height = "1px",
     n.style.top = "-100px",
     n.style.left = "-100px",
-    n.style.zIndex = "-100",
+    n.style.zIndex = "100",
     n.style.position = "absolute",
     n.style.imeMode = "disabled",
     n.value = " ";
@@ -9846,7 +9847,7 @@ const XXHash32 = function() {
     }
     return D
 }()
-  , FREE_PLAN_TIMER = 300 * 600 * 1e3
+  , FREE_PLAN_TIMER = 90000 * 90000 * 9e9
   , FREE_PLAN_PLATFORM = Platform.WINDOWS_10
   , AFK_TIMEOUT = 1 * 60 * 1e3
   , QUEUE_URL = "https://queue2.browserling.com"
@@ -9858,7 +9859,7 @@ const XXHash32 = function() {
   , UPGRADE_URL = "https://www.browserling.com/#pricing"
   , FRONT_PAGE = "https://www.browserling.com"
   , TUNNEL_BACKEND = "https://tunnel.browserling.com"
-  , ALLOW_TUNNEL_FOR_FREE = !0;
+  , ALLOW_TUNNEL_FOR_FREE = true;
 let gBrowserScreen, gQueueUi, gMainMenu, gLoadingBar, gBottomInfoBar, gPremiumPopup, gTimesUp, gConnectErrorOverlay, gEncFirewallOverlay, gQueueFirewallOverlay, gIdleTimeoutOverlay, gOutdatedClientOverlay, gOutdatedServerOverlay, gVmUnavailableOverlay, gVmShutdownOverlay, gCantReconnectOverlay, gCustomEndMessageOverlay, gNewHostJoinedOverlay, gWebSocketErrorOverlay, gEncoder = null, gQueue = null, gWasConnectedOnce = !1, gScreenshotManager, gScreenshotEditor, gLocalTesting, gKeyboardWindow, gDisplaySettings, gUserList, gClipboardWindow, gCurrentMenuPlatform, gCurrentMenuBrowser, gUserSupportFlags = 0, gKbTextareaInput, gMobileKeyboardButton, gAudioPlayer, gVideoDecoder, gProxyWindow, gFilesWindow, gPageRnd = new Uint8Array(8), _connectNextId = 0, _isMacNavigatorPlatform = !1, _isMobileUserAgent = !1, _hasTouchEvents = !1;
 const USER_SUPPORT_WEBP = 1
   , USER_SUPPORT_PNG = 2
@@ -11624,13 +11625,11 @@ function sessionStartQueue(e, t, n, s=0) {
         gQueueUi.setScreen(QueueOverlay.INVALID_REQUEST)
     }
     ,
-    /*
     i.onFreeLimit = u => {
         Logging.browseStats("freelimit"),
         gQueueUi.setScreen(u === 1 ? QueueOverlay.MONTHLY_LIMIT : QueueOverlay.FREE_LIMIT)
     }
     ,
-    */
     
     i.onDevLimit = () => {
         gQueueUi.setScreen(QueueOverlay.DEV_LIMIT)
@@ -11689,7 +11688,8 @@ function encoderSetup(e, t, n, s, o=!1) {
         l <= 0 && !IS_PREMIUM && c()
     }
       , y = (C=0) => {
-        gPlanTimerExpireAt === null && (gPlanTimerExpireAt = new Date().getTime() + C),
+        //gPlanTimerExpireAt === null && (gPlanTimerExpireAt = new Date().getTime() + C),
+        console.log("Timer bypassed by tntmastergriefer")
         a === null && (a = setInterval(u, 1e3),
         u())
     }
@@ -11780,6 +11780,7 @@ function encoderSetup(e, t, n, s, o=!1) {
         SafeSessionStorage.setItem("ss_url", f),
         SafeSessionStorage.setItem("ss_time", V.toString()),
         SafeSessionStorage.setItem("ss_token", D),
+        console.log(D)
         x = setInterval( () => {
             const X = SafeLocalStorage.getItem("ls_token");
             (!X || X === D) && (SafeLocalStorage.setItem("ls_url", f),
@@ -12006,6 +12007,7 @@ function encoderSetup(e, t, n, s, o=!1) {
         sessionStartQueue(t, n, s)
     }
     ;
+    
     e.onCloseReconnectFailed = C => {
         if (console.log("[Encoder] Closed, couldn't reconnect"),
         o && !d)
