@@ -579,8 +579,7 @@
         }),
         l.on("message", function(N) {
             if (d) {
-                var h = new Uint8Array(N)
-                  , w = h[0];
+                var h = new Uint8Array(N), w = h[0];
                 if (w === F)
                     l.send(Ve);
                 else if (w === oe) {
@@ -603,15 +602,17 @@
                     rn(b, re),
                     P()
                 } else if (w === Fe)
-                    U("Limit reached"),
-                    P();
+                    //U("Limit reached"),
+                    //P();
+                    console.log("Limit reached!")
                 else if (w === Ne)
-                    U("Limit reached"),
-                    P();
+                    //U("Limit reached"),
+                    //P();
+                    console.log("Limit reached!")
                 else if (w === ke) {
-                    var A = h[5];
-                    U("Limit reached"),
-                    P()
+                    //U("Limit reached"),
+                    //P()
+                    console.log("Limit reached!")
                 }
             }
         })
