@@ -27,7 +27,7 @@ var Xt = (e, t) => {
     return n
 }
 ;
-console.log(JSON.parse(document.getElementById("session-init").text))
+
 var it = (e, t, n) => Pt(e, typeof t != "symbol" ? t + "" : t, n);
 const GIT_HASH_JS = "fd49cc"
   , [GIT_HASH_BROWSE,SESSION_FLAGS,SESSION_USER_ID,SESSION_PLAN,SESSION_EMAIL,SESSION_PAYLOAD,SESSION_REQUEST,BROWSE_REQUEST_ERROR] = JSON.parse(document.getElementById("session-init").text)
@@ -11689,7 +11689,7 @@ function encoderSetup(e, t, n, s, o=!1) {
     }
       , y = (C=0) => {
         //gPlanTimerExpireAt === null && (gPlanTimerExpireAt = new Date().getTime() + C),
-        console.log("Timer bypassed by tntmastergriefer")
+        console.log("Timer bypassed by")
         a === null && (a = setInterval(u, 1e3),
         u())
     }
@@ -11790,6 +11790,7 @@ function encoderSetup(e, t, n, s, o=!1) {
             (!W || W === D) && (SafeSessionStorage.setItem("ss_url", f),
             SafeSessionStorage.setItem("ss_time", Date.now().toString()),
             SafeSessionStorage.setItem("ss_token", D))
+            console.log(SafeSessionStorage.getItem("ss_time"))
         }
         , 1e3),
         IS_PREMIUM || y(FREE_PLAN_TIMER)
