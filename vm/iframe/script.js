@@ -570,8 +570,8 @@
         l.on("open", function() {
             d && Pe()
         }),
-        l.on("error", function(N) {}),
-        l.on("close", function(N, h) {
+        l.on("error", function() {}),
+        l.on("close", function() {
             d && (setTimeout(function() {
                 wr(e, r, t, i, f, o, s)
             }, 1e3),
@@ -590,9 +590,6 @@
                     U(fe, C),
                     P()
                 } else if (w === De) {
-                    var E = ye(h, 1)
-                      , Sr = ye(h, 5)
-                      , Ur = ye(h, 9);
                     U("Waiting for a browser...")
                 } else if (w === me) {
                     var Ee = Hr(h, 1)
@@ -604,15 +601,20 @@
                 } else if (w === Fe)
                     //U("Limit reached"),
                     //P();
-                    console.log("Limit reached!")
+                    rn(b, re),
+                    console.log("Limit reached!"),
+                    P();
                 else if (w === Ne)
                     //U("Limit reached"),
                     //P();
-                    console.log("Limit reached!")
+                    rn(b, re),
+                    console.log("Limit reached!"),
+                    P();
                 else if (w === ke) {
                     //U("Limit reached"),
                     //P()
-                    console.log("Limit reached!")
+                    console.log("Limit reached!"),
+                    P();
                 }
             }
         })
