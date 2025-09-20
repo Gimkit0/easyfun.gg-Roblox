@@ -98,7 +98,7 @@
             iframe.onload = function() {
                 iframeElement = iframe;
                 iframe.contentWindow.focus();
-                iframeElement.contentWindow.postMessage({type: "init", opts: opts}, iframeSrc);
+                iframeElement.contentWindow.postMessage({type: "init", opts: opts}, window.location.origin);
             }
 
             iframe.onmouseover = function() {
