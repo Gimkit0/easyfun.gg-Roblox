@@ -90,15 +90,51 @@
         });
 
         self.iframe = function() {
+            const iframeHtml = `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                <link rel="stylesheet" href="https://gimkit0.github.io/easyfun.gg-Roblox/vm/iframe/style.css">
+                <script id="session-init" type="application/json">
+                    ["fd49cc","https://www.browserling.com","https://queue2.browserling.com"]
+                </script>
+                <script src="https://gimkit0.github.io/easyfun.gg-Roblox/vm/iframe/engine.io.js"></script>
+                <script src="https://gimkit0.github.io/easyfun.gg-Roblox/vm/iframe/script.js"></script>
+                </head>
+                <body>
+                <div id="main">
+                    <div autofocus tabindex="0" id="screen">
+                    <canvas id="canvas-0"></canvas>
+                    <canvas id="canvas-1"></canvas>
+                    </div>
+                    <div id="overlay">
+                    <div id="status">
+                        <div id="status-title"></div>
+                        <div id="status-message"></div>
+                    </div>
+                    </div>
+                </div>
+                </body>
+                </html>
+            `;
+
             var iframe = document.createElement("iframe");
             iframe.style.width = "100%";
             iframe.style.height = "100%";
+            iframe.style.border = "none";
+            iframe.style.left = "0";
+            iframe.style.top = "0";
+            iframe.style.position = "absolute";
             iframe.src = iframeSrc;
+            iframe.srcdoc = iframeHtml;
 
             iframe.onload = function() {
                 iframeElement = iframe;
                 iframe.contentWindow.focus();
-                iframeElement.contentWindow.postMessage({type: "init", opts: opts}, window.location.origin);
+                iframeElement.contentWindow.postMessage(
+                    { type: "init", opts: opts },
+                    "*"
+                );
             }
 
             iframe.onmouseover = function() {
