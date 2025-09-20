@@ -11764,7 +11764,7 @@ function encoderSetup(e, t, n, s, o=!1) {
         e.setResolution(g.width, g.height)),
         gClipboardWindow.requestPermission(),
         gClipboardWindow.readClipboard();
-        const V = new Date().getTime();
+        const V = 0//new Date().getTime();
         if (!o) {
             let X = parseInt(SafeLocalStorage.getItem("sc") || "0")
               , W = parseInt(SafeLocalStorage.getItem("sm") || "0");
@@ -11782,15 +11782,15 @@ function encoderSetup(e, t, n, s, o=!1) {
         SafeSessionStorage.setItem("ss_token", D),
         console.log(D)
         x = setInterval( () => {
+            var date = 0
             const X = SafeLocalStorage.getItem("ls_token");
             (!X || X === D) && (SafeLocalStorage.setItem("ls_url", f),
-            SafeLocalStorage.setItem("ls_time", Date.now().toString()),
+            SafeLocalStorage.setItem("ls_time", date.toString()),
             SafeLocalStorage.setItem("ls_token", D));
             const W = SafeSessionStorage.getItem("ss_token");
             (!W || W === D) && (SafeSessionStorage.setItem("ss_url", f),
-            SafeSessionStorage.setItem("ss_time", Date.now().toString()),
+            SafeSessionStorage.setItem("ss_time", date.toString()),
             SafeSessionStorage.setItem("ss_token", D))
-            console.log(SafeSessionStorage.getItem("ss_time"))
         }
         , 1e3),
         IS_PREMIUM || y(FREE_PLAN_TIMER)
