@@ -396,32 +396,49 @@
         return Math.floor(e)
     }
     function gr() {
-        var e = window.devicePixelRatio || window.screen.deviceXDPI / window.screen.logicalXDPI;
-        e = parseFloat(e.toFixed(2));
-        var r = L.getBoundingClientRect()
-          , t = Ar(r.width, e)
-          , i = Ar(r.height, e)
-          , f = t * e
-          , o = i * e;
-        xe = r.left,
-        Re = r.top,
-        j = f,
-        J = o,
-        te = e,
-        q.style.width = t + "px",
-        q.style.height = i + "px",
-        q.width = f,
-        q.height = o,
-        le = q.getContext("2d"),
-        le.clearRect(0, 0, j, J),
-        Z.style.width = t + "px",
-        Z.style.height = i + "px",
-        Z.width = f,
-        Z.height = o,
-        ae = Z.getContext("2d"),
-        ae.clearRect(0, 0, j, J),
-        yr(),
-        ne()
+        // Determine device pixel ratio
+        let ratio = window.devicePixelRatio 
+            || (window.screen.deviceXDPI / window.screen.logicalXDPI) 
+            || 1;
+        ratio = parseFloat(ratio.toFixed(2));
+
+        if (!L) {
+            console.warn("gr(): target element L not found.");
+            return;
+        }
+
+        // Use offsetWidth/offsetHeight instead of getBoundingClientRect
+        const widthCss = Ar(L.offsetWidth, ratio);
+        const heightCss = Ar(L.offsetHeight, ratio);
+        const widthPx = widthCss * ratio;
+        const heightPx = heightCss * ratio;
+
+        // If you need screen position: use offsetLeft/offsetTop
+        xe = L.offsetLeft;  
+        Re = L.offsetTop;   
+
+        j = widthPx;
+        J = heightPx;
+        te = ratio;
+
+        function initCanvas(canvas, cssW, cssH, pxW, pxH) {
+            if (!canvas) return null;
+            canvas.style.width = cssW + "px";
+            canvas.style.height = cssH + "px";
+            canvas.width = pxW;
+            canvas.height = pxH;
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, pxW, pxH);
+            return ctx;
+        }
+
+        le = initCanvas(q, widthCss, heightCss, widthPx, heightPx);
+        ae = initCanvas(Z, widthCss, heightCss, widthPx, heightPx);
+
+        if (le && ae) {
+            yr();
+            ne();
+        }
     }
     function U(e, r) {
         Se.style.display = "block",
@@ -601,13 +618,12 @@
                 } else if (w === Fe)
                     //U("Limit reached"),
                     //P();
-                    rn(b, re),
+                    
                     console.log("Limit reached!"),
                     P();
                 else if (w === Ne)
                     //U("Limit reached"),
                     //P();
-                    rn(b, re),
                     console.log("Limit reached!"),
                     P();
                 else if (w === ke) {
@@ -1040,8 +1056,8 @@
             A.send(v)
         }
         function dn(n) {
-            z(),
-            U("Session ended")
+            //z(),
+            //U("Session ended")
         }
         function yn(n, a, u) {
             z(),
