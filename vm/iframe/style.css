@@ -1,0 +1,96 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body { 
+    line-height: 1.5;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -o-text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overscroll-behavior: none;
+    touch-action: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    overflow: hidden;
+    font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#main {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: white;
+}
+
+#screen {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: none;
+    outline: none;
+}
+
+#canvas-0, #canvas-1 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    image-rendering: pixelated;
+    pointer-events: none;
+}
+
+#overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+}
+
+#status {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#status-title {
+    font-size: 32px;
+}
+
+#status-message {
+    font-size: 20px;
+    padding-top: 12px;
+}
