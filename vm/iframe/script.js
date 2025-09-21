@@ -596,11 +596,7 @@
         }),
         l.on("message", function(N) {
             function connect() {
-                var Ee = Hr(h, 1)
-                    , re = Zr(Ee)
-                    , b = m(Me(h, 2 + Ee.length))
-                U("Your browser is coming up!")
-                rn(b, re)
+                d && Pe()
             }
 
             if (d) {
@@ -617,22 +613,16 @@
                       , re = Zr(Ee)
                       , b = m(Me(h, 2 + Ee.length));
                     U("Your browser is coming up!"),
-                    connect()
+                    P();
                 } else if (w === Fe)
-                    //U("Limit reached"),
-                    //P();
                     connect(),
                     U("Limit reached"),
                     P();
                 else if (w === Ne)
-                    //U("Limit reached"),
-                    //P();
                     connect(),
                     U("Limit reached"),
                     P();
                 else if (w === ke) {
-                    //U("Limit reached"),
-                    //P()
                     connect(),
                     U("Limit reached"),
                     P();
