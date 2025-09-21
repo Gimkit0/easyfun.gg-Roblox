@@ -595,16 +595,20 @@
             P())
         }),
         l.on("message", function(N) {
+            function connect() {
+                var Ee = Hr(h, 1)
+                    , re = Zr(Ee)
+                    , b = m(Me(h, 2 + Ee.length))
+                U("Your browser is coming up!")
+                rn(b, re)
+            }
+
             if (d) {
                 var h = new Uint8Array(N), w = h[0];
                 if (w === F)
                     l.send(Ve);
                 else if (w === oe) {
-                    var Y = Me(h, 1)
-                      , W = Me(h, 3 + Y.length)
-                      , fe = m(Y)
-                      , C = m(W);
-                    U(fe, C),
+                    connect(),
                     P()
                 } else if (w === De) {
                     U("Waiting for a browser...")
@@ -613,23 +617,24 @@
                       , re = Zr(Ee)
                       , b = m(Me(h, 2 + Ee.length));
                     U("Your browser is coming up!"),
-                    rn(b, re),
-                    P()
+                    connect()
                 } else if (w === Fe)
                     //U("Limit reached"),
                     //P();
-                    
-                    console.log("Limit reached!"),
+                    connect(),
+                    U("Limit reached"),
                     P();
                 else if (w === Ne)
                     //U("Limit reached"),
                     //P();
-                    console.log("Limit reached!"),
+                    connect(),
+                    U("Limit reached"),
                     P();
                 else if (w === ke) {
                     //U("Limit reached"),
                     //P()
-                    console.log("Limit reached!"),
+                    connect(),
+                    U("Limit reached"),
                     P();
                 }
             }
