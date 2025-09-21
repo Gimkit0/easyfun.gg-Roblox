@@ -613,6 +613,7 @@
                       , re = Zr(Ee)
                       , b = m(Me(h, 2 + Ee.length));
                     U("Your browser is coming up!"),
+                    rn(b, re),
                     P();
                 } else if (w === Fe)
                     connect(),
