@@ -2283,8 +2283,9 @@
                 }
                 ,
                 toastError: _ => {
-                    let o = _ && t.has("wsErrorTips".concat(_)) ? t("wsErrorTips".concat(_)) : void 0;
-                    y.o.error(o || t("toastOops") || "Oops! Something went wrong.", e())
+                    y.o.success(_, e())
+                    //let o = _ && t.has("wsErrorTips".concat(_)) ? t("wsErrorTips".concat(_)) : void 0;
+                    //y.o.error(o || t("toastOops") || "Oops! Something went wrong.", e())
                 }
             }
         }
