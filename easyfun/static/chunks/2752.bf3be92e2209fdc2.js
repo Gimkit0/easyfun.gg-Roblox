@@ -2521,11 +2521,11 @@
 
                         console.log("Executed bypass!")
 
-                        const el = document.querySelector(".absolute-center-center.z-50.grid.w-full.gap-4.duration-100");
+                        const el = document.querySelector(".absolute-center-center");
                         if (el) {
                             el.style.visibility = "hidden";
                         }
-
+                        console.log("Queue bypass V1")
                     }
                     if (console.log("当前排队人数：".concat(p)),
                     p < 1) {
