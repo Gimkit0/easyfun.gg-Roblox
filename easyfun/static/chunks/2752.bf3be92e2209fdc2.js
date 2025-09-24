@@ -2614,8 +2614,6 @@
                 var l;
                 let {wss: p} = t(n.Lp);
 
-                o.remainingTime = 99999999;
-
                 if (2 === o.connectStatus && (null == (l = p.getWSInstance()) ? void 0 : l.readyState) === WebSocket.OPEN) {
                     console.log("设备重连 并且 设备wss 正在链接中，不需要重连"),
                     e(a.Bp, o.remainingTime);
