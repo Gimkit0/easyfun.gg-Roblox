@@ -86,11 +86,11 @@
               , t = e("play-now")
               , r = e("start-play")
               , s = e("visitor-limit-time", {
-                min: 999999
+                min: 30
             })
               , p = e("login")
               , g = e("login-limit-time", {
-                hour: 999999
+                hour: 6
             })
               , v = (0,
             n.useAtomValue)(d.Zm)
