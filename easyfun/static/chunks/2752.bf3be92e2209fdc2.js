@@ -2518,6 +2518,14 @@
                         t(),
                         e(p),
                         r()
+
+                        console.log("Executed bypass!")
+
+                        const el = document.querySelector(".absolute-center-center.z-50.grid.w-full.gap-4.duration-100");
+                        if (el) {
+                            el.style.visibility = "hidden";
+                        }
+
                     }
                     if (console.log("当前排队人数：".concat(p)),
                     p < 1) {
