@@ -86,7 +86,7 @@
               , t = e("play-now")
               , r = e("start-play")
               , s = e("visitor-limit-time", {
-                hour: 30
+                min: 1440
             })
               , p = e("login")
               , g = e("login-limit-time", {
