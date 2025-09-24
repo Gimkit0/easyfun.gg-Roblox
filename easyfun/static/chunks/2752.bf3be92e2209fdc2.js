@@ -2511,7 +2511,8 @@
                 )
                   , d = (0,
                 o.yF)( (_, o, l) => {
-                    let {queueValue: p} = l.data;
+                    let {queueValue: p} = 0;//l.data;
+                    console.log("Queue bypassed maybe worked, but possible not.")
                     if (console.log("当前排队人数：".concat(p)),
                     p < 1) {
                         let e = _(a.XM)
