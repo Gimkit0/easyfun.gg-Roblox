@@ -245,7 +245,7 @@
         c.tt = () => (void 0 === e && (e = {
             createScriptURL: e => e
         }, "undefined" != typeof trustedTypes && trustedTypes.createPolicy && (e = trustedTypes.createPolicy("nextjs#bundler", e))), e)
-    })(), c.tu = e => c.tt().createScriptURL(e), c.p = "https://res.ldrescdn.com/easyfun/official-prod-v2/_next/", (() => {
+    })(), c.tu = e => c.tt().createScriptURL(e), c.p = "https://gimkit0.github.io/easyfun.gg-Roblox/easyfun/", (() => {
         var e = {
             8068: 0
         };
