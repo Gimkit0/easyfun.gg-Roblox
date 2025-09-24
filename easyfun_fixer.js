@@ -1,7 +1,5 @@
-const button = document.querySelector(
-    '.button.size-9.bg-white-1.bg-op-10.c-white-1.hover\\:c-cyan-5'
-);
 const fullscreenElement = document.getElementById('fullscreen-element');
+const clearFingerprint = document.getElementById('clear-fingerprint');
 
 function getNewID() {
     let hex = "";
@@ -23,18 +21,14 @@ function getLocalStorageData() {
     });
 }
 
-newFingerprint();
+//newFingerprint();
 getLocalStorageData();
 
 window.addEventListener("contextmenu", (e) => e.preventDefault());
-if (button && fullscreenElement) {
-    button.addEventListener('click', () => {
-          if (fullscreenElement.requestFullscreen) {
-            fullscreenElement.requestFullscreen();
-          } else if (fullscreenElement.webkitRequestFullscreen) { // Safari
-            fullscreenElement.webkitRequestFullscreen();
-          } else if (fullscreenElement.msRequestFullscreen) { // IE/Edge
-            fullscreenElement.msRequestFullscreen();
-          }
-    });
-}
+
+clearFingerprint.addEventListener('click', () => {
+    newFingerprint();
+    getLocalStorageData();
+
+    window.location.reload();
+});
