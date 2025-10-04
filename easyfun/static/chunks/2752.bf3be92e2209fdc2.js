@@ -2514,10 +2514,17 @@
                     let {queueValue: p} = 0;//l.data;
                     console.log("Queue bypassed maybe worked, but possible not.")
                     function bypass() {
-                        let {stop: t} = _(n.ii);
+                        let e = _(a.XM)
+                          , o = _(n.vB);
+                        (0,
+                        i.sendGTMEvent)({
+                            event: "finish-queue",
+                            waitTime: Math.floor((new Date - f.current) / 1e3),
+                            uid: null == e ? void 0 : e.uid,
+                            gameName: null == o ? void 0 : o.gameName
+                        }),
                         t(),
-                        e(p),
-                        r()
+                        c()
 
                         console.log("Executed bypass!")
 
