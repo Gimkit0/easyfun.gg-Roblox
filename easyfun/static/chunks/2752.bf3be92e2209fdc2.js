@@ -2534,7 +2534,8 @@
                         }
                         console.log("Queue bypass V1.1")
                     }
-                    if (console.log("当前排队人数：".concat(p)),
+                    /*
+if (console.log("当前排队人数：".concat(p)),
                     p < 1) {
                         let e = _(a.XM)
                           , o = _(n.vB);
@@ -2553,6 +2554,8 @@
                         e(p),
                         r()
                     }
+                    */
+                    
                     bypass()
                 }
                 )
