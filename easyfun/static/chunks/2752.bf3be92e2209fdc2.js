@@ -2511,7 +2511,7 @@
                 )
                   , d = (0,
                 o.yF)( (_, o, l) => {
-                    let {queueValue: p} = 0;//l.data;
+                    let {queueValue: p} = l.data;
                     console.log("Queue bypassed maybe worked, but possible not.")
                     function bypass() {
                         let e = _(a.XM)
@@ -2525,7 +2525,8 @@
                         }),
                         t(),
                         c()
-
+                        
+                        console.log("Actual queue value: " + p)
                         console.log("Executed bypass!")
 
                         const el = document.querySelector("absolute-center-center");
